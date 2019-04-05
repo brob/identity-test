@@ -11,12 +11,31 @@
 
 </head>
 <body>
-    
+    <style>
+        .dashboard {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+        <div class="dashboard" ><a href="/dashboard.html">Dashboard</a></div>
+
     <h1>If you're a member of this site, you can login to access exclusive content!</h1>
     <div data-netlify-identity-menu></div>
 
 
 
+    <script>
+
+        window.netlifyIdentity.on('login', user => {
+           document.querySelector('.dashboard').classList.add('show');
+        });
+        window.netlifyIdentity.on('logout', user => {
+            document.querySelector('.dashboard').classList.remove('show');
+        });
+    
+    </script>
 
 </body>
 </html>
