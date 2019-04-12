@@ -30,6 +30,7 @@
 
         window.netlifyIdentity.on('login', user => {
            document.querySelector('.dashboard').classList.add('show');
+            console.log(user);
         });
         window.netlifyIdentity.on('logout', user => {
             document.querySelector('.dashboard').classList.remove('show');
